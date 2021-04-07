@@ -28,11 +28,18 @@ body::before {
   z-index: -1;
 }
 
+@media only screen and (max-width: 1100px) {
+  body::before {
+    background-color: black;
+  }
+}
+
 @media (min-width: 1024px) {
   body::before {
     background-attachment: fixed;
   }
 }
+
 
 a {
   color: #18d26e;
