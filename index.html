@@ -1,711 +1,1153 @@
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Personal Bootstrap Template</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
+    <title>Mohammad Moradi — Senior Security Engineer</title>
 
-  <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <!-- Bootstrap 5 -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    >
 
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <!-- Google Font -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
 
-  <!-- Template Main CSS File -->
-  <link href="assets/css/style.css" rel="stylesheet">
+    <style>
+        :root {
+            --ink: #202326;
+            --dark: #292d32;
+            --dark-2: #343a40;
+            --gray: #6c737b;
+            --muted: #8a9097;
+            --line: #e2e5e8;
+            --soft: #f4f5f6;
+            --paper: #ffffff;
+            --accent: #555c64;
+        }
 
+        * {
+            box-sizing: border-box;
+        }
 
-  <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+        body {
+            margin: 0;
+            background: #dfe2e5;
+            color: var(--ink);
+            font-family: "Inter", Arial, sans-serif;
+            font-size: 13px;
+            line-height: 1.65;
+        }
 
+        .resume {
+            width: 210mm;
+            min-height: 297mm;
+            margin: 28px auto;
+            background: var(--paper);
+            box-shadow: 0 20px 55px rgba(0, 0, 0, 0.14);
+            overflow: hidden;
+        }
+
+        /* -------------------------
+           SIDEBAR
+        ------------------------- */
+
+        .sidebar {
+            background: var(--dark);
+            color: #fff;
+            min-height: 297mm;
+            padding: 34px 26px;
+        }
+
+        .profile-wrapper {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .profile-image {
+            width: 126px;
+            height: 126px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 5px solid rgba(255, 255, 255, 0.12);
+            background: #454b52;
+            display: block;
+            margin: 0 auto 18px;
+        }
+
+        .profile-name {
+            font-size: 24px;
+            font-weight: 800;
+            letter-spacing: -0.8px;
+            margin: 0;
+        }
+
+        .profile-role {
+            color: #c8ccd0;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-top: 7px;
+        }
+
+        .sidebar-section {
+            margin-top: 27px;
+        }
+
+        .sidebar-title {
+            font-size: 10px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1.8px;
+            color: #aeb4ba;
+            padding-bottom: 9px;
+            margin-bottom: 13px;
+            border-bottom: 1px solid rgba(255,255,255,0.12);
+        }
+
+        .contact-item {
+            display: flex;
+            gap: 10px;
+            align-items: flex-start;
+            margin-bottom: 11px;
+            color: #d7dade;
+            font-size: 11px;
+            line-height: 1.45;
+        }
+
+        .contact-item i {
+            color: #aeb4ba;
+            font-size: 14px;
+            min-width: 16px;
+            margin-top: 2px;
+        }
+
+        .skill-item {
+            margin-bottom: 9px;
+            color: #dfe2e5;
+            font-size: 10.8px;
+            line-height: 1.45;
+        }
+
+        .skill-dot {
+            display: inline-block;
+            width: 5px;
+            height: 5px;
+            background: #aeb4ba;
+            border-radius: 50%;
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+
+        .cert-item {
+            position: relative;
+            padding-left: 14px;
+            margin-bottom: 11px;
+            color: #d6dade;
+            font-size: 10.3px;
+            line-height: 1.45;
+        }
+
+        .cert-item::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 7px;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: #9299a1;
+        }
+
+        /* -------------------------
+           MAIN CONTENT
+        ------------------------- */
+
+        .main {
+            padding: 38px 38px 42px;
+        }
+
+        .hero {
+            padding-bottom: 25px;
+            border-bottom: 2px solid var(--ink);
+            margin-bottom: 27px;
+        }
+
+        .hero-kicker {
+            color: var(--gray);
+            font-size: 10px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2.2px;
+            margin-bottom: 7px;
+        }
+
+        .hero h1 {
+            margin: 0;
+            font-size: 36px;
+            font-weight: 800;
+            letter-spacing: -1.7px;
+            line-height: 1.05;
+        }
+
+        .hero-role {
+            margin-top: 9px;
+            font-size: 15px;
+            color: var(--gray);
+            font-weight: 600;
+        }
+
+        .summary {
+            margin-top: 17px;
+            color: #555c63;
+            font-size: 12.3px;
+            max-width: 700px;
+            line-height: 1.75;
+        }
+
+        .section {
+            margin-bottom: 28px;
+        }
+
+        .section-heading {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 18px;
+        }
+
+        .section-number {
+            display: inline-flex;
+            width: 27px;
+            height: 27px;
+            justify-content: center;
+            align-items: center;
+            background: var(--ink);
+            color: white;
+            font-size: 10px;
+            font-weight: 800;
+        }
+
+        .section-heading h2 {
+            margin: 0;
+            font-size: 14px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1.4px;
+        }
+
+        .section-rule {
+            flex: 1;
+            height: 1px;
+            background: var(--line);
+        }
+
+        /* Experience */
+
+        .experience {
+            position: relative;
+            padding-left: 24px;
+            border-left: 2px solid #d8dce0;
+        }
+
+        .experience-item {
+            position: relative;
+            margin-bottom: 27px;
+        }
+
+        .experience-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .experience-item::before {
+            content: "";
+            position: absolute;
+            left: -31px;
+            top: 5px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--dark);
+            border: 3px solid white;
+            box-shadow: 0 0 0 2px var(--dark);
+        }
+
+        .company-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 3px;
+        }
+
+        .company {
+            font-size: 16px;
+            font-weight: 800;
+            letter-spacing: -0.3px;
+        }
+
+        .date {
+            white-space: nowrap;
+            background: var(--soft);
+            color: var(--gray);
+            font-size: 9.5px;
+            font-weight: 700;
+            padding: 4px 8px;
+            border-radius: 3px;
+        }
+
+        .position {
+            color: var(--gray);
+            font-size: 10.5px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            margin-bottom: 10px;
+        }
+
+        .sub-role {
+            display: inline-block;
+            font-size: 10px;
+            font-weight: 800;
+            color: var(--ink);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 2px solid #d7dade;
+            padding-bottom: 2px;
+            margin: 8px 0 7px;
+        }
+
+        .achievement {
+            position: relative;
+            padding-left: 15px;
+            color: #555c63;
+            font-size: 11.1px;
+            line-height: 1.6;
+            margin-bottom: 5px;
+        }
+
+        .achievement::before {
+            content: "—";
+            position: absolute;
+            left: 0;
+            color: #90969c;
+            font-weight: 700;
+        }
+
+        /* Education */
+
+        .education-item {
+            display: flex;
+            gap: 18px;
+            padding: 12px 0;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .education-item:last-child {
+            border-bottom: 0;
+        }
+
+        .education-date {
+            min-width: 80px;
+            color: var(--gray);
+            font-size: 10px;
+            font-weight: 700;
+        }
+
+        .education-degree {
+            font-size: 12px;
+            font-weight: 800;
+            text-transform: uppercase;
+            line-height: 1.4;
+        }
+
+        .education-school {
+            color: var(--gray);
+            font-size: 10.5px;
+            margin-top: 2px;
+        }
+
+        .education-detail {
+            color: #6d7379;
+            font-size: 10px;
+            margin-top: 3px;
+        }
+
+        /* Skill matrix */
+
+        .skill-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 8px;
+        }
+
+        .skill-chip {
+            border: 1px solid var(--line);
+            padding: 9px 10px;
+            background: #fafafa;
+            font-size: 10.2px;
+            font-weight: 600;
+            color: #4f565d;
+            line-height: 1.4;
+        }
+
+        .skill-chip strong {
+            display: block;
+            color: var(--ink);
+            font-size: 10.8px;
+            margin-bottom: 2px;
+        }
+
+        /* Highlight cards */
+
+        .highlight-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+
+        .highlight {
+            background: var(--soft);
+            padding: 13px;
+            border-left: 3px solid var(--dark);
+        }
+
+        .highlight i {
+            font-size: 17px;
+            color: var(--gray);
+        }
+
+        .highlight strong {
+            display: block;
+            margin-top: 5px;
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: .7px;
+        }
+
+        .highlight span {
+            display: block;
+            color: var(--gray);
+            font-size: 9.5px;
+            line-height: 1.45;
+            margin-top: 3px;
+        }
+
+        /* Footer */
+
+        .resume-footer {
+            padding-top: 17px;
+            border-top: 1px solid var(--line);
+            color: #9aa0a6;
+            font-size: 9px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* -------------------------
+           RESPONSIVE
+        ------------------------- */
+
+        @media (max-width: 900px) {
+            body {
+                background: white;
+            }
+
+            .resume {
+                width: 100%;
+                margin: 0;
+                box-shadow: none;
+            }
+
+            .sidebar {
+                min-height: auto;
+            }
+
+            .main {
+                padding: 30px 25px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .company-row {
+                flex-direction: column;
+                gap: 5px;
+            }
+
+            .skill-grid,
+            .highlight-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 29px;
+            }
+
+            .education-item {
+                flex-direction: column;
+                gap: 2px;
+            }
+
+            .education-date {
+                min-width: auto;
+            }
+        }
+
+        /* -------------------------
+           PRINT / PDF
+        ------------------------- */
+
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
+        @media print {
+            body {
+                background: white;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            .resume {
+                width: 210mm;
+                min-height: 297mm;
+                margin: 0;
+                box-shadow: none;
+            }
+
+            .sidebar {
+                min-height: 297mm;
+            }
+
+            .experience-item,
+            .education-item,
+            .section {
+                break-inside: avoid;
+            }
+
+            .hero {
+                break-after: avoid;
+            }
+
+            a {
+                color: inherit !important;
+                text-decoration: none !important;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-  <!-- ======= Header ======= -->
-  <header id="header">
-    <div class="container">
+<div class="resume">
 
-      <h1><a href="index.html">Mohammad Moradi(zerobits01)</a></h1>
-      <!-- Uncomment below if you prefer to use an image logo -->
-      <!-- <a href="index.html" class="mr-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a> -->
-      <h2>I'm a motivated and junior <span>Cyber Security Eng and vulnerability researcher</span> from Tehran, Iran</h2>
+    <div class="row g-0">
 
-      <nav id="navbar" class="navbar">
-        <ul>
-          <li><a class="nav-link active" href="#header">Home</a></li>
-          <li><a class="nav-link" href="#about">About</a></li>
-          <li><a class="nav-link" href="#resume">Resume</a></li>
-          <li><a class="nav-link" href="#services">Services</a></li>
-          <!-- <li><a class="nav-link" href="#portfolio">Portfolio</a></li> -->
-          <li><a class="nav-link" href="#contact">Contact</a></li>
-        </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav><!-- .navbar -->
+        <!-- ==========================================
+             LEFT SIDEBAR
+        =========================================== -->
+        <aside class="col-lg-4 sidebar">
 
-      <div class="social-links">
-        <a href="https://www.instagram.com/mmd_moradi99/ " class="instagram"><i class="bi bi-instagram"></i></a>
-        <a href="https://ir.linkedin.com/in/mohammad-moradi-8b51a8199" class="linkedin"><i class="bi bi-linkedin"></i></a>
-      </div>
+            <div class="profile-wrapper">
+
+                <!--
+                    Replace profile.jpg with your own image.
+                    Keep the image in the same directory as this HTML file.
+                -->
+                <img
+                    src="profile.jpg"
+                    alt="Mohammad Moradi"
+                    class="profile-image"
+                >
+
+                <h2 class="profile-name">Mohammad Moradi</h2>
+
+                <div class="profile-role">
+                    Senior Security Engineer
+                </div>
+
+            </div>
+
+
+            <!-- Contact -->
+            <div class="sidebar-section">
+
+                <div class="sidebar-title">
+                    Contact
+                </div>
+
+                <div class="contact-item">
+                    <i class="bi bi-geo-alt"></i>
+                    <span>Tehran, Shahrak Shahid Beheshti</span>
+                </div>
+
+                <div class="contact-item">
+                    <i class="bi bi-telephone"></i>
+                    <span>09398116641</span>
+                </div>
+
+                <div class="contact-item">
+                    <i class="bi bi-envelope"></i>
+                    <span>zerobits0101@gmail.com</span>
+                </div>
+
+            </div>
+
+
+            <!-- Core Skills -->
+            <div class="sidebar-section">
+
+                <div class="sidebar-title">
+                    Core Skills
+                </div>
+
+                <div class="skill-item">
+                    <span class="skill-dot"></span>
+                    Splunk SIEM
+                </div>
+
+                <div class="skill-item">
+                    <span class="skill-dot"></span>
+                    Detection Engineering
+                </div>
+
+                <div class="skill-item">
+                    <span class="skill-dot"></span>
+                    Red Teaming
+                </div>
+
+                <div class="skill-item">
+                    <span class="skill-dot"></span>
+                    Python Development
+                </div>
+
+                <div class="skill-item">
+                    <span class="skill-dot"></span>
+                    Malware Development
+                </div>
+
+                <div class="skill-item">
+                    <span class="skill-dot"></span>
+                    Kubernetes Security
+                </div>
+
+                <div class="skill-item">
+                    <span class="skill-dot"></span>
+                    DevSecOps
+                </div>
+
+                <div class="skill-item">
+                    <span class="skill-dot"></span>
+                    Linux Security
+                </div>
+
+                <div class="skill-item">
+                    <span class="skill-dot"></span>
+                    Automation
+                </div>
+
+            </div>
+
+
+            <!-- Certifications -->
+            <div class="sidebar-section">
+
+                <div class="sidebar-title">
+                    Certifications & Training
+                </div>
+
+                <div class="cert-item">
+                    Linux Red Team — Nooranet
+                </div>
+
+                <div class="cert-item">
+                    Basic Blue Team — Nooranet
+                </div>
+
+                <div class="cert-item">
+                    Linux Blue Team — Nooranet
+                </div>
+
+                <div class="cert-item">
+                    Advance Red Team — Nooranet
+                </div>
+
+                <div class="cert-item">
+                    Linux Red Team — K8S, Docker, Linux Client & Server
+                </div>
+
+                <div class="cert-item">
+                    Web Pentest — Lian Academy
+                </div>
+
+                <div class="cert-item">
+                    Splunk Threat Hunt — Nooranet
+                </div>
+
+                <div class="cert-item">
+                    Python for Offensive — RedTeamLeaders
+                </div>
+
+                <div class="cert-item">
+                    RedTeam Operation Management — RedTeamLeaders
+                </div>
+
+                <div class="cert-item">
+                    Offensive Development — RedTeamLeaders
+                </div>
+
+            </div>
+
+        </aside>
+
+
+        <!-- ==========================================
+             MAIN CONTENT
+        =========================================== -->
+        <main class="col-lg-8 main">
+
+
+            <!-- Hero -->
+            <header class="hero">
+
+                <div class="hero-kicker">
+                    Cybersecurity · Security Engineering · Offensive & Defensive Security
+                </div>
+
+                <h1>
+                    Mohammad Moradi
+                </h1>
+
+                <div class="hero-role">
+                    Senior Security Engineer
+                </div>
+
+                <p class="summary">
+                    Senior Security Engineer with about 5 years of experience
+                    and a development background, working across blue team,
+                    red team, security engineering, detection engineering,
+                    Python development, Kubernetes security, and DevSecOps.
+                </p>
+
+            </header>
+
+
+            <!-- Professional Highlights -->
+            <section class="section">
+
+                <div class="section-heading">
+                    <span class="section-number">01</span>
+                    <h2>Professional Focus</h2>
+                    <div class="section-rule"></div>
+                </div>
+
+                <div class="highlight-grid">
+
+                    <div class="highlight">
+                        <i class="bi bi-shield-lock"></i>
+                        <strong>Security Engineering</strong>
+                        <span>
+                            Detection, SIEM, EDR, logging and security architecture.
+                        </span>
+                    </div>
+
+                    <div class="highlight">
+                        <i class="bi bi-terminal"></i>
+                        <strong>Offensive Security</strong>
+                        <span>
+                            Adversary simulation, red teaming and security tooling.
+                        </span>
+                    </div>
+
+                    <div class="highlight">
+                        <i class="bi bi-code-slash"></i>
+                        <strong>Engineering</strong>
+                        <span>
+                            Python, automation, distributed systems and infrastructure.
+                        </span>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- Experience -->
+            <section class="section">
+
+                <div class="section-heading">
+                    <span class="section-number">02</span>
+                    <h2>Experience</h2>
+                    <div class="section-rule"></div>
+                </div>
+
+
+                <div class="experience">
+
+                    <!-- BLU-BANK -->
+                    <article class="experience-item">
+
+                        <div class="company-row">
+                            <div class="company">BLU-BANK</div>
+                            <div class="date">2022 — NOW</div>
+                        </div>
+
+                        <div class="position">
+                            Tehran, Iran · Security Engineering
+                        </div>
+
+
+                        <div class="sub-role">
+                            Blue Team Engineer
+                        </div>
+
+                        <div class="achievement">
+                            Designing procedures for Notables and dashboard design
+                            and implementing them.
+                        </div>
+
+                        <div class="achievement">
+                            Designing Asset Management and Patch Management flows.
+                        </div>
+
+                        <div class="achievement">
+                            Developing and tuning Data Models.
+                        </div>
+
+                        <div class="achievement">
+                            Developing Use Cases and Dashboards.
+                        </div>
+
+                        <div class="achievement">
+                            Acting as Security Architect for Kubernetes and implementing
+                            laboratory scenarios for testing, implementation and demos.
+                        </div>
+
+                        <div class="achievement">
+                            Developing a Python-based logging module for Apache Superset
+                            and other tools in different programming languages.
+                        </div>
+
+
+                        <div class="sub-role">
+                            Red / Purple Team Engineer · 2 Years
+                        </div>
+
+                        <div class="achievement">
+                            Adversary Simulation and Emulation.
+                        </div>
+
+                        <div class="achievement">
+                            Developing Red Team tools and malware.
+                        </div>
+
+                        <div class="achievement">
+                            Implementing Red Team scenarios and helping Blue Team
+                            engineers develop detection rules.
+                        </div>
+
+                        <div class="achievement">
+                            Developing a malware analysis platform based on LLM,
+                            MCP and IDA Pro to analyze malware automatically.
+                        </div>
+
+                        <div class="achievement">
+                            EDR bypassing and tuning the rules.
+                        </div>
+
+                        <div class="achievement">
+                            Developing an Access Matrix in Splunk to help Blue Team
+                            engineers implement complex logical Splunk queries.
+                        </div>
+
+                        <div class="achievement">
+                            Hunting unofficial network traffic based on hypothesis hunting.
+                        </div>
+
+
+                        <div class="sub-role">
+                            SOC Analyst · 2 Years
+                        </div>
+
+                        <div class="achievement">
+                            Developing detection rules for different attacks.
+                        </div>
+
+                        <div class="achievement">
+                            Developing a Python module connecting to Splunk using
+                            splunk-sdk and checking queries based on KMeans and
+                            Machine Learning.
+                        </div>
+
+                        <div class="achievement">
+                            Setting up Splunk Data Models for Endpoint, Network
+                            and Authentication.
+                        </div>
+
+                        <div class="achievement">
+                            Developing and tuning Notables based on Data Models.
+                        </div>
+
+                        <div class="achievement">
+                            Investigation using Splunk Investigate and Workbenches.
+                        </div>
+
+                        <div class="achievement">
+                            Developing Auditd rules for Linux.
+                        </div>
+
+                        <div class="achievement">
+                            Basic forensics using FTK, Volatility and related tools.
+                        </div>
+
+                        <div class="achievement">
+                            Detecting DNS tunneling attacks with URL Toolbox.
+                        </div>
+
+                    </article>
+
+
+                    <!-- PAYAMPARDAZ -->
+                    <article class="experience-item">
+
+                        <div class="company-row">
+                            <div class="company">PAYAMPARDAZ</div>
+                            <div class="date">2020 — 2022</div>
+                        </div>
+
+                        <div class="position">
+                            Isfahan, Iran · Python Developer
+                        </div>
+
+
+                        <div class="achievement">
+                            R&amp;D on SD-WAN products and gathering a large budget
+                            from Hamrah Aval for Payam Pardaz.
+                        </div>
+
+                        <div class="achievement">
+                            Developing Firewall Agents for SD-WAN products using
+                            Python, Ansible, VPP and FRR, with gRPC as the communication
+                            channel.
+                        </div>
+
+                        <div class="achievement">
+                            Developing a three-layer GRE-IPSec-VXLAN tunnel for
+                            firewalling.
+                        </div>
+
+                        <div class="achievement">
+                            Developing firewall modules with eBPF and iptables.
+                        </div>
+
+                        <div class="achievement">
+                            Developing a Dynamic Route Module with FRR for Edge
+                            Firewalls to provide OSPF routing capability.
+                        </div>
+
+                        <div class="achievement">
+                            Developing a Firewall Central Management Console for
+                            SD-WAN network management based on Python, Redis,
+                            RabbitMQ and REST API.
+                        </div>
+
+                        <div class="achievement">
+                            Developing CI/CD rules based on RabbitMQ and GitLab CI
+                            for automating procedures.
+                        </div>
+
+                        <div class="achievement">
+                            Dockerizing projects for compatibility and serving them
+                            as services.
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+
+            <!-- Education -->
+            <section class="section">
+
+                <div class="section-heading">
+                    <span class="section-number">03</span>
+                    <h2>Education</h2>
+                    <div class="section-rule"></div>
+                </div>
+
+                <div class="education-item">
+
+                    <div class="education-date">
+                        2021 — 2024
+                    </div>
+
+                    <div>
+                        <div class="education-degree">
+                            MSc of Secure Computing
+                        </div>
+
+                        <div class="education-school">
+                            Amirkabir University
+                        </div>
+
+                        <div class="education-detail">
+                            ISO2700X Standards · Cryptography · Selected CISSP Chapters
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="education-item">
+
+                    <div class="education-date">
+                        2017 — 2021
+                    </div>
+
+                    <div>
+                        <div class="education-degree">
+                            BSc of Computer Engineering
+                        </div>
+
+                        <div class="education-school">
+                            University of Isfahan
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="education-item">
+
+                    <div class="education-date">
+                        2013 — 2017
+                    </div>
+
+                    <div>
+                        <div class="education-degree">
+                            Mathematics Diploma
+                        </div>
+
+                        <div class="education-school">
+                            SAMPAD KHORRAMABAD
+                        </div>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- Technical Skills -->
+            <section class="section">
+
+                <div class="section-heading">
+                    <span class="section-number">04</span>
+                    <h2>Technical Skills</h2>
+                    <div class="section-rule"></div>
+                </div>
+
+                <div class="skill-grid">
+
+                    <div class="skill-chip">
+                        <strong>SIEM &amp; Detection</strong>
+                        Splunk SIEM, Data Models, Notables, Detection Engineering
+                    </div>
+
+                    <div class="skill-chip">
+                        <strong>Security Operations</strong>
+                        Blue Team, SOC Analysis, Threat Hunting, EDR
+                    </div>
+
+                    <div class="skill-chip">
+                        <strong>Offensive Security</strong>
+                        Red Teaming, Adversary Simulation, Tool Development
+                    </div>
+
+                    <div class="skill-chip">
+                        <strong>Programming</strong>
+                        Python, Django, gRPC
+                    </div>
+
+                    <div class="skill-chip">
+                        <strong>Infrastructure</strong>
+                        Docker, Kubernetes, K8S Administration
+                    </div>
+
+                    <div class="skill-chip">
+                        <strong>Cloud-Native Security</strong>
+                        EFK, Falco, Rancher, Tetragon, Istio
+                    </div>
+
+                    <div class="skill-chip">
+                        <strong>Linux Security</strong>
+                        Tracee, eBPF, Auditd, SELinux, AppArmor
+                    </div>
+
+                    <div class="skill-chip">
+                        <strong>Automation &amp; DevSecOps</strong>
+                        Shuffle, Ansible, Git, GitLab CI, Trivy
+                    </div>
+
+                    <div class="skill-chip">
+                        <strong>Databases</strong>
+                        PostgreSQL, Redis
+                    </div>
+
+                    <div class="skill-chip">
+                        <strong>Messaging</strong>
+                        RabbitMQ
+                    </div>
+
+                    <div class="skill-chip">
+                        <strong>Networking</strong>
+                        FRR, VPP, eBPF, iptables, SD-WAN
+                    </div>
+
+                    <div class="skill-chip">
+                        <strong>Machine Learning</strong>
+                        Basic Machine Learning &amp; Deep Learning
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- Footer -->
+            <footer class="resume-footer">
+
+                <span>
+                    MOHAMMAD MORADI · SENIOR SECURITY ENGINEER
+                </span>
+
+                <span>
+                    SECURITY · ENGINEERING · DEVELOPMENT
+                </span>
+
+            </footer>
+
+        </main>
 
     </div>
-  </header><!-- End Header -->
 
-  <!-- ======= About Section ======= -->
-  <section id="about" class="about">
-
-    <!-- ======= About Me ======= -->
-    <div class="about-me container">
-
-      <div class="section-title">
-        <h2>About</h2>
-        <p>Learn more about me</p>
-      </div>
-
-      <div class="row">
-        <div class="col-lg-4" data-aos="fade-right">
-          <img src="assets/img/me.jpg" class="img-fluid" alt="">
-        </div>
-        <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
-          <h3>SRE &amp; Sec.Eng</h3>
-          <p class="fst-italic">
-            I'm a security engineer who loves linux and open sourcing. i love networks and programming.
-            Also i'm intested in SDN and SDWAN and i have researched some about these topics.
-          </p>
-          <div class="row">
-            <div class="col-lg-6">
-              <ul>
-                <li><i class="bi bi-chevron-right"></i> <strong>Birthday:</strong> <span>2 Jul 1999</span></li>
-                <li><i class="bi bi-chevron-right"></i> <strong>Website:</strong> <span>-</span></li>
-                <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span>+98 9398116641</span></li>
-                <li><i class="bi bi-chevron-right"></i> <strong>City:</strong> <span>Tehran, Iran</span></li>
-              </ul>
-            </div>
-            <div class="col-lg-6">
-              <ul>
-                <li><i class="bi bi-chevron-right"></i> <strong>Age:</strong> <span>22</span></li>
-                <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong> <span>Master</span></li>
-                <li><i class="bi bi-chevron-right"></i> <strong>PhEmailone:</strong> <span>zerobits0101@gmail.com</span></li>
-                <li><i class="bi bi-chevron-right"></i> <strong>Freelance:</strong> <span>Available</span></li>
-              </ul>
-            </div>
-          </div>
-          <p>
-            My personality type is INTJ.
-            Usually I try learn new things and teach them to my teammates.
-          </p>
-        </div>
-      </div>
-
-    </div><!-- End About Me -->
-
-    <!-- ======= Counts ======= 
-    <div class="counts container">
-
-      <div class="row">
-
-        <div class="col-lg-3 col-md-6">
-          <div class="count-box">
-            <i class="bi bi-emoji-smile"></i>
-            <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" class="purecounter"></span>
-            <p>Happy Clients</p>
-          </div>
-        </div>
-
-        <div class="col-lg-3 col-md-6 mt-5 mt-md-0">
-          <div class="count-box">
-            <i class="bi bi-journal-richtext"></i>
-            <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1" class="purecounter"></span>
-            <p>Projects</p>
-          </div>
-        </div>
-
-        <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
-          <div class="count-box">
-            <i class="bi bi-headset"></i>
-            <span data-purecounter-start="0" data-purecounter-end="1463" data-purecounter-duration="1" class="purecounter"></span>
-            <p>Hours Of Support</p>
-          </div>
-        </div>
-
-        <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
-          <div class="count-box">
-            <i class="bi bi-award"></i>
-            <span data-purecounter-start="0" data-purecounter-end="24" data-purecounter-duration="1" class="purecounter"></span>
-            <p>Awards</p>
-          </div>
-        </div>
-
-      </div>
-
-    </div><!-- End Counts -->
-
-    <!-- ======= Skills  ======= -->
-    <div class="skills container">
-
-      <div class="section-title">
-        <h2>Skills</h2>
-      </div>
-
-      <div class="row skills-content">
-
-        <div class="col-lg-6">
-
-          <div class="progress">
-            <span class="skill">Python <i class="val">100%</i></span>
-            <div class="progress-bar-wrap">
-              <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-          </div>
-
-          <div class="progress">
-            <span class="skill">Linux(LPIC3 sec) <i class="val">90%</i></span>
-            <div class="progress-bar-wrap">
-              <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-          </div>
-
-          <div class="progress">
-            <span class="skill">Django and DRF <i class="val">60%</i></span>
-            <div class="progress-bar-wrap">
-              <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-          </div>
-
-          <div class="progress">
-            <span class="skill">SDN(Onos, RYU) <i class="val">65%</i></span>
-            <div class="progress-bar-wrap">
-              <div class="progress-bar" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-          </div>
-
-          <div class="progress">
-            <span class="skill">SDWAN (VPP, FRR) <i class="val">65%</i></span>
-            <div class="progress-bar-wrap">
-              <div class="progress-bar" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-          </div>
-
-
-          <div class="progress">
-            <span class="skill">Jenkins and Ansible <i class="val">100%</i></span>
-            <div class="progress-bar-wrap">
-              <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-          </div>
-
-          <div class="progress">
-            <span class="skill">Zabbix <i class="val">70%</i></span>
-            <div class="progress-bar-wrap">
-              <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-          </div>
-
-
-          <div class="progress">
-            <span class="skill">ELK Stack <i class="val">80%</i></span>
-            <div class="progress-bar-wrap">
-              <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-6">
-
-          <div class="progress">
-            <span class="skill">Git <i class="val">80%</i></span>
-            <div class="progress-bar-wrap">
-              <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-          </div>
-
-          <div class="progress">
-            <span class="skill">SQL and PostgreSQL <i class="val">60%</i></span>
-            <div class="progress-bar-wrap">
-              <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-          </div>
-
-          <div class="progress">
-            <span class="skill">Redis <i class="val">60%</i></span>
-            <div class="progress-bar-wrap">
-              <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-          </div>
-
-          <div class="progress">
-            <span class="skill">C/Cpp <i class="val">70%</i></span>
-            <div class="progress-bar-wrap">
-              <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-          </div>
-
-          <div class="progress">
-            <span class="skill">CEH/PWK <i class="val">70%</i></span>
-            <div class="progress-bar-wrap">
-              <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-          </div>
-
-          <div class="progress">
-            <span class="skill">Docker<i class="val">50%</i></span>
-            <div class="progress-bar-wrap">
-              <div class="progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-          </div>
-
-          <div class="progress">
-            <span class="skill">gRPC <i class="val">75%</i></span>
-            <div class="progress-bar-wrap">
-              <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-          </div>
-
-          <div class="progress">
-            <span class="skill">CCNA <i class="val">80%</i></span>
-            <div class="progress-bar-wrap">
-              <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-
-    </div><!-- End Skills -->
-
-    <!-- ======= Interests ======= -->
-    <div class="interests container">
-
-      <div class="section-title">
-        <h2>Interests</h2>
-      </div>
-
-      <div class="row">
-        <div class="col-lg-3 col-md-4">
-          <div class="icon-box">
-            <span class="iconify icon:ion:git-network-sharp icon-inline:false" style="color: #ffbb2c; font-size: 2rem;"></span>
-            <h3> &nbsp;Networking</h3>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
-          <div class="icon-box">
-            <span class="iconify" data-icon="carbon:network-2" data-inline="false" style="color: orange; font-size: 2rem;"></span>
-            <h3> &nbsp;SDN</h3>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
-          <div class="icon-box">
-            <span class="iconify" data-icon="entypo:network" data-inline="false" style="color: red; font-size: 2rem;"></span>
-            <h3> &nbsp;SDWan</h3>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 mt-4 mt-lg-0">
-          <div class="icon-box">
-            <span class="iconify" data-icon="logos:linux-tux" data-inline="false" style="font-size: 2rem;"></span>
-            <h3>&nbsp; &nbsp; SRE</h3>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 mt-4">
-          <div class="icon-box">
-            <i class="ri-database-2-line" style="color: #47aeff;"></i>
-            <h3>SQL</h3>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 mt-4">
-          <div class="icon-box">
-            <span class="iconify" data-icon="ls:web" data-inline="false" style="color: burlywood; font-size: 2rem;"></span>
-            <h3>&nbsp; Web Dev</h3>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 mt-4">
-          <div class="icon-box">
-            <i class="ri-file-list-3-line" style="color: #11dbcf;"></i>
-            <h3>Monitor and log management</h3>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 mt-4">
-          <div class="icon-box">
-            <span class="iconify" data-icon="ic:outline-security" data-inline="false" style="color: blue; font-size: 2rem;"></span>
-            <h3>&nbsp; Security</h3>
-          </div>
-        </div>
-      </div>
-
-    </div><!-- End Interests -->
-
-  </section><!-- End About Section -->
-
-  <!-- ======= Resume Section ======= -->
-  <section id="resume" class="resume">
-    <div class="container">
-
-      <div class="section-title">
-        <h2>Resume</h2>
-        <p>Check My Resume</p>
-      </div>
-
-      <div class="row">
-        <div class="col-lg-6">
-          <h3 class="resume-title">Sumary</h3>
-          <div class="resume-item pb-0">
-            <h4>Mohammad Moradi</h4>
-            <p><em>I am a Junior T-shaped engineer. I know back-end development, core programming and 
-              also i can work as SRE, SysAdmin and network security Eng. Most of my experience (1+ year) 
-              is about networking and security.</em>
-                i have my own team and our is capable to implement services such
-                mobile application programming, Web Design and programming, System Admin services.
-              </p>
-            <p>
-            <ul>
-              <li>Ghanat kosar, Tehran, Iran</li>
-              <li>(98) 9398116641</li>
-              <li>zerobits0101@gmail.com</li>
-            </ul>
-            </p>
-          </div>
-
-          <h3 class="resume-title">Education</h3>
-          <div class="resume-item">
-            <h4>MSC CyberSec@AUT</h4>
-            <h5>2021-2023</h5>
-            <p><em>Amirkabir University of Tech, Tehran, Iran</em></p>
-            <p>Studying cybersec, focused on Reverse Engineering and vulnerability detection</p>
-          </div>
-          <div class="resume-item">
-            <h4>Bachelor of Computer Eng</h4>
-            <h5>2017 - 2021</h5>
-            <p><em>UniversityOfIsfahan, Isfahan, Iran</em></p>
-            <p>My rank was in best 15% students.</p>
-          </div>
-          
-        </div>
-
-        <h3 class="resume-title">Jobs and Experience</h3>
-        <div class="col-lg-6">
-          <div class="resume-item">
-            <h4>Junior network security researcher</h4>
-            <h5>2020 - 2021</h5>
-            <p><em>PayamPardaz Co</em></p>
-            <p>
-            <ul>
-              <li>SDN(Ryu) creating some topologies</li>
-              <li>Ansible and auto wireguard config </li>
-              <li>SDN(Onos) clustering</li>
-              <li>SDWAN(VPP, FRR)</li>
-              <li>SDWAN(firewall, ACL, ABF, etc) creating an edge server, controller and manager with gRPC and Django</li>
-            </ul>
-            </p>
-          </div>
-
-
-          <div class="resume-item">
-            <h4>Junior BackEnd</h4>
-            <h5>2018 - 2020</h5>
-            <p><em></em></p>
-            <p>
-            <ul>
-              <li></li>
-            </ul>
-            </p>
-          </div>
-
-        </div>
-      </div>
-
-    </div>
-  </section><!-- End Resume Section -->
-
-  <!-- ======= Services Section ======= -->
-  <section id="services" class="services">
-    <div class="container">
-
-      <div class="section-title">
-        <h2>Services</h2>
-        <p>My Services</p>
-      </div>
-
-      <div class="row">
-        <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
-          <div class="icon-box">
-            <div class="icon"><i class="bx bxl-dribbble"></i></div>
-            <h4><a href="">Web Development</a></h4>
-            <p>i have team whom they are capable to design and implement websites which you can dream (custom design, wordpress and etc)</p>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
-          <div class="icon-box">
-            <div class="icon"><i class="bx bx-file"></i></div>
-            <h4><a href="">Rest API</a></h4>
-            <p>developing rest apis for servcing web, desktop and mobile apps (laravel, django, drf, nodejs)</p>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 ">
-          <div class="icon-box">
-            <div class="icon"><i class="bx bx-tachometer"></i></div>
-            <h4><a href="">Mobile applications</a></h4>
-            <p>Ask me and my team, we can implement what you want :)!(Flutter, kotlin, java react native)</p>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
-          <div class="icon-box">
-            <div class="icon"><i class="bx bx-world"></i></div>
-            <h4><a href="">System administration</a></h4>
-            <p>i can maintain your servers, i have a good team that they are all motivated and experienced, we can secure your servers</p>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
-          <div class="icon-box">
-            <div class="icon"><i class="bx bx-slideshow"></i></div>
-            <h4><a href="">social media security</a></h4>
-            <p>My team and i can secure your social media, also we have a team on content management that can help you for developing your market</p>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
-          <div class="icon-box">
-            <div class="icon"><i class="bx bx-arch"></i></div>
-            <h4><a href="">graphic design</a></h4>
-            <p>designing cards and graphical views, i have good links with some graphic designers and we can handle your project integrated instead working with so many teams</p>
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-  </section><!-- End Services Section -->
-
-  <!-- ======= Portfolio Section ======= 
-  <section id="portfolio" class="portfolio">
-    <div class="container">
-
-      <div class="section-title">
-        <h2>Portfolio</h2>
-        <p>My Works</p>
-      </div>
-
-      <div class="row">
-        <div class="col-lg-12 d-flex justify-content-center">
-          <ul id="portfolio-flters">
-            <li data-filter="*" class="filter-active">All</li>
-            <li data-filter=".filter-app">App</li>
-            <li data-filter=".filter-card">Card</li>
-            <li data-filter=".filter-web">Web</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="row portfolio-container">
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-          <div class="portfolio-wrap">
-            <img src="assets/img/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>App 1</h4>
-              <p>App</p>
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" data-gallery="portfolioDetailsGallery" data-glightbox="type: external" class="portfolio-details-lightbox" title="Portfolio Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-          <div class="portfolio-wrap">
-            <img src="assets/img/portfolio/portfolio-2.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Web 3</h4>
-              <p>Web</p>
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/portfolio-2.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" data-gallery="portfolioDetailsGallery" data-glightbox="type: external" class="portfolio-details-lightbox" title="Portfolio Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-          <div class="portfolio-wrap">
-            <img src="assets/img/portfolio/portfolio-3.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>App 2</h4>
-              <p>App</p>
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/portfolio-3.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 2"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" data-gallery="portfolioDetailsGallery" data-glightbox="type: external" class="portfolio-details-lightbox" title="Portfolio Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-          <div class="portfolio-wrap">
-            <img src="assets/img/portfolio/portfolio-4.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Card 2</h4>
-              <p>Card</p>
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/portfolio-4.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 2"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" data-gallery="portfolioDetailsGallery" data-glightbox="type: external" class="portfolio-details-lightbox" title="Portfolio Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-          <div class="portfolio-wrap">
-            <img src="assets/img/portfolio/portfolio-5.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Web 2</h4>
-              <p>Web</p>
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/portfolio-5.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 2"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" data-gallery="portfolioDetailsGallery" data-glightbox="type: external" class="portfolio-details-lightbox" title="Portfolio Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-          <div class="portfolio-wrap">
-            <img src="assets/img/portfolio/portfolio-6.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>App 3</h4>
-              <p>App</p>
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/portfolio-6.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 3"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" data-gallery="portfolioDetailsGallery" data-glightbox="type: external" class="portfolio-details-lightbox" title="Portfolio Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-          <div class="portfolio-wrap">
-            <img src="assets/img/portfolio/portfolio-7.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Card 1</h4>
-              <p>Card</p>
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/portfolio-7.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 1"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" data-gallery="portfolioDetailsGallery" data-glightbox="type: external" class="portfolio-details-lightbox" title="Portfolio Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-          <div class="portfolio-wrap">
-            <img src="assets/img/portfolio/portfolio-8.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Card 3</h4>
-              <p>Card</p>
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/portfolio-8.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 3"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" data-gallery="portfolioDetailsGallery" data-glightbox="type: external" class="portfolio-details-lightbox" title="Portfolio Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-          <div class="portfolio-wrap">
-            <img src="assets/img/portfolio/portfolio-9.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Web 3</h4>
-              <p>Web</p>
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/portfolio-9.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" data-gallery="portfolioDetailsGallery" data-glightbox="type: external" class="portfolio-details-lightbox" title="Portfolio Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-  </section><!-- End Portfolio Section -->
-
-  <!-- ======= Contact Section ======= -->
-  <section id="contact" class="contact">
-    <div class="container">
-
-      <div class="section-title">
-        <h2>Contact</h2>
-        <p>Contact Me</p>
-      </div>
-
-      <div class="row mt-2">
-
-        <div class="col-md-6 d-flex align-items-stretch">
-          <div class="info-box">
-            <i class="bx bx-map"></i>
-            <h3>My Address</h3>
-            <p>Tehran, Ghanat Kosar</p>
-          </div>
-        </div>
-
-        <div class="col-md-6 mt-4 mt-md-0 d-flex align-items-stretch">
-          <div class="info-box">
-            <i class="bx bx-share-alt"></i>
-            <h3>Social Profiles</h3>
-            <div class="social-links">
-              <a href="https://www.instagram.com/mmd_moradi99/ " class="instagram"><i class="bi bi-instagram"></i></a>
-              <a href="https://ir.linkedin.com/in/mohammad-moradi-8b51a8199" class="linkedin"><i class="bi bi-linkedin"></i></a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-6 mt-4 d-flex align-items-stretch">
-          <div class="info-box">
-            <i class="bx bx-envelope"></i>
-            <h3>Email Me</h3>
-            <p>zerobits0101@gmail.com</p>
-          </div>
-        </div>
-        <div class="col-md-6 mt-4 d-flex align-items-stretch">
-          <div class="info-box">
-            <i class="bx bx-phone-call"></i>
-            <h3>Call Me</h3>
-            <p>+98 9398116641</p>
-          </div>
-        </div>
-      </div>
-
-
-    </div>
-  </section><!-- End Contact Section -->
-
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="assets/vendor/purecounter/purecounter.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-
-  <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
+</div>
 
 </body>
-
 </html>
